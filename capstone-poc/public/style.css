@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 24px;
+}
+
+html, body {
+  background: #6c6c6c
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  height:100vh;
+  width:100%;
+  
+}
+#controls {
+  display: flex;
+  justify-content: center;
+  background: white;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 10px;
+}
+#dashboard {
+  margin: 16px;
+  height: 100%;
+  border: 4px solid white;
+  display:flex;
+  flex-grow:1;
+  justify-content: space-around;
+  align-items: center;
+}
+#dashboard > div {
+  border-radius: 10px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  margin: 16px;
+}
+#claimCount {
+  flex: 40%;
+}
+#claimList {
+  flex: 60%;
+}
+#countTitle, #listTitle {
+  text-decoration: underline;
+  font-size: 32px;
+}
+#countVal {
+  margin: 24px;
+  font-size: 42px;
+}
+
+.bundleInstance {
+  padding: 8px;
+  font-size: 32px;
+}
+#controls > form > h1 {
+  display: inline;
+  position: absolute;
+  top:auto;
+  left:24px;
+}
+
+
+.list-enter-active, .list-leave-active {
+  transition: all 0.5s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}

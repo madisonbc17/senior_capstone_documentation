@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>CNAB Dashboard</title>
+</head>
+<body>
+  <div id="app">
+    <!-- A Control section to trigger bundle actions. Used in v1 of the demo -->
+    <!-- <div id="controls">
+      <form @submit.prevent="doForm">
+        <h1>CONTROLS</h1>
+        Bundle Name: <input type="text" v-model="bundle" required>
+        <select name="action" id="actionSelect" v-model="action">
+          <option value="install">Install</option>
+          <option value="upgrade">Upgrade</option>
+          <option value="remove">Uninstall</option>
+        </select>
+        <button type="submit">GO!</button>
+      </form>
+
+    </div> -->
+    <div id="dashboard">
+      <div id="claimCount">
+          <h2 id="countTitle"># of Bundles</h2>
+          <div id="countVal">{{claims.length}}</div>
+        </div>
+        <div id="claimList">
+          <h2 id="listTitle">Installed Bundles (NAME - LAST ACTION)</h2>
+          <div id="listItems">
+            <p v-if="!claims.length > 0">No Bundles Installed</p>
+            <transition-group v-else name="list" tag="p">
+              <p  class="bundleInstance" v-for="claim in claims" :key="claim.name">{{claim.name}}@{{claim.bundle.version}} - {{claim.result.action}}</p>
+
+            </transition-group>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
